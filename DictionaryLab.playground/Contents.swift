@@ -18,7 +18,7 @@ assert(eveAppleCount == 4, "Was expecting 4, but got \(eveAppleCount)")
 // b. Change the number of apples that Adam  has to 4
 
 applesDict["Adam"] = 4 
-//assert(applesDict["Adam"] == 4, "Was expecting 4, but got \(String(describing: applesDict["Adam"]))")
+assert(applesDict["Adam"] == 4, "Was expecting 4, but got \(String(describing: applesDict["Adam"]))")
 
 // c. Set calAndDanAppleCount equal to the sum of both of those
 
@@ -26,7 +26,11 @@ let calAndDanAppleCount = (applesDict["Eve"] ?? -1) + (applesDict["Adam"] ?? -1)
 assert(calAndDanAppleCount == 8, "Was expecting 8, but got \(calAndDanAppleCount)")
 
 // d. Set all the values in applesDict to 0
-
+ 
+for (key, _) in applesDict {
+    applesDict[key] = 0
+}
+print (applesDict)
 
 
 //for (_, value) in applesDict {
